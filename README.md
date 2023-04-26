@@ -1,12 +1,17 @@
 # Task list
 
+![enter image description here](https://i.ibb.co/N65CLK9/to-do-list-react.png)
+
 ## Demo
+
+https://paulinaszamraj.github.io/to-do-list-react/
 
 ## Description
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technologies
+
  - React
  - HTML
  - CSS
