@@ -6,12 +6,19 @@ import Header from "./Header";
 import Container from "./Container";
 import { useState } from "react";
 
+const getInitialTasks = () => {
+  const tasksFromLocalStorage = localStorage.getItem("tasks");
+  return tasksFromLocalStorage ? JSON.parse(tasksFromLocalStorage) : [];
+};
+
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "zrobić obiad", done: true },
-    { id: 2, content: "wykonać projekt", done: false },
-  ]);
+
+  const [tasks, setTasks] = useState(getInitialTasks);
+
+  useEffect(() => {
+    localStorage.setItem("task", JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
